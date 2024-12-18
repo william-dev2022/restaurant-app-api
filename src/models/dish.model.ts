@@ -7,6 +7,7 @@ const dishSchema = new mongoose.Schema({
   image: { type: String, required: true }, // URL for the dish image
   tags: [{ type: [String] }], // e.g., ['vegan', 'spicy', 'popular']
   menu: [{ type: mongoose.Schema.Types.ObjectId, ref: "Menu" }], // Links to a specific menu
+  isAvailable: { type: Boolean, default: true }, // Boolean to check if the dish is available
   discount: {
     amount: { type: Number, default: 0 }, // Discount amount in %
     validUntil: { type: Date }, // Optional: Expiry date for the discount
